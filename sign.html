@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/9e15e3d08a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="utils.css">
+    <link rel="stylesheet" href="stylesignInsignUp.css">
+    <link rel="icon" type="image/png" href="logo and favicon/download.png"/>
+   
+    
+    <title>anonyMate</title>
+</head>
+<body>
+    <header>
+<!-- Navbar -->
+<nav id="navbar">
+    <div class="container">
+        <div class="logo"><img src="logo and favicon/logo.jpeg" alt="" style="height: 110px; width: 110px; margin-bottom: -100px;"></div>
+        <ul>
+            <li><a href="landing page.html">Home</a></li>
+            <li><a href="Guide.html">Guide</a></li>
+            <li><a href="chat.html">Chat</a></li>
+            <li><a href="Faq.html">Faq</a></li>
+            <li><a href="register.html" style="text-decoration: none;">Register</a></li>
+            <li><a href="sign.html">Sign In/Sign Up</a></li>
+        </ul>
+
+    </div>
+    
+</nav>
+ <!--Sign In/SignUp  -->
+ <div class="sec">
+    <div class="container1">
+        <div class="overlay" id="overlay">
+          <div class="sign-in" id="sign-in">
+            <h1 style="color: aliceblue;">Welcome Back!</h1>
+            <p>To keep connected with us please login with your personal info</p>
+            <button class="switch-button" id="slide-right-button">Sign In</button>
+          </div>
+          <div class="sign-up" id="sign-up">
+            <h1 style="color: aliceblue;">Hello, Friend!</h1>
+            <p>Enter your personal details and start a journey with us</p>
+            <button class="switch-button" id="slide-left-button">Sign Up</button>
+          </div>
+        </div>
+        <div class="form">
+          <div class="sign-in" id="sign-in-info">
+            <h1>Sign In</h1>
+           
+            
+            <form id="sign-in-form">      
+              <input type="text" placeholder="User ID"/>
+              <input type="password" placeholder="Password"/>
+              <button class="control-button in"><a href="chat.html">Sign In</a></button>
+            </form>
+          </div>
+          <div class="sign-up" id="sign-up-info">
+            <h1>Create Account</h1>
+        
+            <form id="sign-up-form">
+              <input type="text" placeholder="User"/>
+              <input type="number" placeholder="User ID"/>
+              <input type="password" placeholder="Password"/>
+              <button class="control-button up"><a href="chat.html">Sign Up</a></button>
+            </form>
+          </div>
+        </div>
+      </div>
+ </div>
+ <!-- FOOTER -->
+ <footer class="footer">
+    <div class="social">
+      <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+      <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+      <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
+      <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+    </div>
+  </footer>
+<!-- Js -->
+<script src="Sign.js"></script>
+</body>
+</html>
