@@ -1,95 +1,95 @@
 h1{
-    font-family: 'Poppins',sans-serif;
-    color: aliceblue;
+  font-family: 'Poppins',sans-serif;
+  color: aliceblue;
+}
+.quote{
+  color: black;
+}
+
+
+.aboutus{
+  display: flex;
+  flex-direction: row;
+  padding: 50px;
+  height: 500px;
+  background: linear-gradient(90deg, rgba(35,128,250,1) 3%, rgba(77,170,255,1) 38%, rgba(30,216,233,1) 80%);
+  margin: 50px;
+  border-radius: 40px;
+}
+.rpart
+{
+  display: flex;
+  flex-direction: column;
+  margin-left: 150px;
+}
+p{
+
+  margin-top: 20px;
+  margin-right: 20px;
+  font-family: 'Roboto',sans-serif;
+  color: aliceblue;
+  font-weight: 400;
+  font-size: 150%;
+
+}
+.aboutus1{
+  background: linear-gradient(90deg, rgba(35,128,250,1) 3%, rgba(77,170,255,1) 38%, rgba(30,216,233,1) 80%);
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 50px;
+  height: 500px;
+  margin: 50px;
+  border-radius: 40px;
+
+}
+
+.lpart
+{
+  display: flex;
+  flex-direction: column;
+  /* margin-right: 150px; */
+}
+h2{
+   margin: 40%;
+   padding: 30px;  
+}
+
+
+/* Footer */
+.footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  height: 200px;
+}
+.footer a {
+  color: #ffffff;
+}
+.footer .social > *{
+  margin-right: 30px;
+
+}
+/* MOBILE */
+@media(max-width: 768px){
+  .navbar{
+      flex-direction: column;
+      height: 120px;
+      padding: 20px;
   }
-  .quote{
-    color: black;
+  .navbar a{
+      padding: 10px 10p;;
+      margin:0 3px;
   }
-  
-  
-  .aboutus{
-    display: flex;
-    flex-direction: row;
-    padding: 50px;
-    height: 500px;
-    background: linear-gradient(90deg, rgba(35,128,250,1) 3%, rgba(77,170,255,1) 38%, rgba(30,216,233,1) 80%);
-    margin: 50px;
-    border-radius: 40px;
+  .flex-items{
+      flex-direction: column;
   }
-  .rpart
-  {
-    display: flex;
-    flex-direction: column;
-    margin-left: 150px;
+  .flex-columns .column, .flex-grid{
+      flex: 100%;
+      max-width: 100%;
   }
-  p{
-  
-    margin-top: 20px;
-    margin-right: 20px;
-    font-family: 'Roboto',sans-serif;
-    color: aliceblue;
-    font-weight: 400;
-    font-size: 150%;
-  
-  }
-  .aboutus1{
-    background: linear-gradient(90deg, rgba(35,128,250,1) 3%, rgba(77,170,255,1) 38%, rgba(30,216,233,1) 80%);
-    display: flex;
-    flex-direction: row-reverse;
-    padding: 50px;
-    height: 500px;
-    margin: 50px;
-    border-radius: 40px;
-  
-  }
-  
-  .lpart
-  {
-    display: flex;
-    flex-direction: column;
-    /* margin-right: 150px; */
-  }
-  h2{
-     margin: 40%;
-     padding: 30px;  
-  }
-  
-  
-  /* Footer */
-  .footer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    height: 200px;
-  }
-  .footer a {
-    color: #ffffff;
-  }
-  .footer .social > *{
-    margin-right: 30px;
-  
-  }
-  /* MOBILE */
-  @media(max-width: 768px){
-    .navbar{
-        flex-direction: column;
-        height: 120px;
-        padding: 20px;
-    }
-    .navbar a{
-        padding: 10px 10p;;
-        margin:0 3px;
-    }
-    .flex-items{
-        flex-direction: column;
-    }
-    .flex-columns .column, .flex-grid{
-        flex: 100%;
-        max-width: 100%;
-    }
-     .team img{
-         width: 70%;
-     }
-  }
+   .team img{
+       width: 70%;
+   }
+}
