@@ -12,4 +12,5 @@ urlpatterns = [
     path('guide/', views.guide, name="guide"),
     path('sign/', views.sign, name="sign"),
     path('home/', views.home, name="home"),
+    path('calendar/', views.calendar, name="calendar"),
 ]

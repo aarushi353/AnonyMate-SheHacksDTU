@@ -5,15 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Welcome to the most extraordinary hotel in Boston Massachussetts">
-    <meta name="keywords" content="hotel,boston hotel,new england hotel">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/9e15e3d08a.js" crossorigin="anonymous"></script>
     
     <link href="{% static 'css/stylechat.css' %}" rel="stylesheet">
     <link href="{% static 'css/utils.css' %}" rel="stylesheet">
-    <link rel="icon" type="image/png" href="logo and favicon/download.png"/>
-   
+    <link rel="icon" type="image/png" href="{% static 'images/download.png' %}"/>
     
     <title>anonyMate</title>
 </head>
@@ -24,12 +21,13 @@
     <div class="container">
         <div class="logo"><img src="{% static 'images/logo.jpeg' %}" alt="" style="height: 110px; width: 110px; margin-bottom: -100px;"></div>
         <ul>
-            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'home' %}" style="text-decoration: none;">Home</a></li>
             <li><a href="{% url 'guide' %}" style="text-decoration: none;">Guide</a></li>
             <li><a href="{% url 'chatting' %}"style="text-decoration: none;">Chat</a></li>
             <li><a href="{% url 'Faq' %}" style="text-decoration: none;">Faq</a></li>
             <li><a href="{% url 'register' %}" style="text-decoration: none;">Register</a></li>
             <li><a href="{% url 'login' %}" style="text-decoration: none;">Sign In/Sign Up</a></li>
+
         </ul>
 
     </div>
@@ -39,11 +37,16 @@
  <div class="right-part" style="display: flex;">
  <img src="{% static 'images/Pngtreemobile_short_message_chat_4999528.png' %}" alt="...">
  <div class="right" style="margin-top:220px; margin-left: 220px; padding: 50px;">
- <h1 style="padding-bottom: 10px;text-align: center;">Live Chat</h1>
+ <h1 style="padding-bottom: 10px;text-align: center;"></h1>
  <a href="{% url 'chat'%}">
-      <div class="btn" style="text-align: center;">Enter Chat Room<i class="far fa-comment-alt"  style="margin-left: 10px;"></i></div>
+     <div id="chatroom"> <div class="btn" style="text-align: center;">Enter Chat Room<i class="far fa-comment-alt"  style="margin-left: 10px;"></i></div></div>
 </a>
     </div>
+<a href="{% url 'calendar'%}">
+  <div id="calendar"><div class="btn" style="text-align: center;margin-top: 280px;">Calendar<i class="far fa-calendar-alt"  style="margin-left: 10px;"></i></div>
+</div>
+</a>
+</div>
 </div>
  <!-- FOOTER -->
  <footer class="footer">
