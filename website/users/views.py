@@ -69,3 +69,7 @@ def chat(request):
 
 def sign(request):
     return render(request, 'users/sign.html')
+
+
+def calendar(request):
+    return render(request, 'users/calendar.html')
