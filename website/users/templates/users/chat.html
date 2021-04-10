@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Chat</title>
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <!-- Theme CSS -->
+    <link href="{% static 'css/agency.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/utils.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <nav id="navbar">
+        <div class="container">
+            <div class="logo"><img src="{% static "images/logo.jpeg" %}" alt="" style="height: 110px; width: 110px; margin-bottom: -100px;"></div>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'guide' %}">Guide</a></li>
+                <li><a href="{% url 'chat' %}">Chat</a></li>
+                <li><a href="{% url 'Faq' %}">Faq</a></li>
+                <!-- <li><a href="register.html" style="text-decoration: none;">Register</a></li>
+                <li><a href="sign.html">Sign In/Sign Up</a></li> -->
+            </ul>
+            </div>
+            </nav>
+
+    <section id="chat-app">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-lg-6 col-md-6 mb-4">
+    				Your ID: <h4 id="peer-id" data-toggle="tooltip" data-placement="top" title="Click to copy peer ID"></h3>
+                    <a href="#getUserNameModal" data-toggle="modal">change</a>
+    			</div>
+    			<div class="col-lg-6 col-md-6 mb-5 hide">
+    				<div class="form-inline">
+						<div class="form-group mr-sm-3">
+							<label for="inputPeerUserId" class="sr-only">Password</label>
+							<input type="text" class="form-control" id="inputPeerUserId" placeholder="Enter your friends ID">
+						</div>
+						<button type="button" class="btn btn-outline-primary" id='connect-btn'>Connect</button>
+					</div>
+    			</div>
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Available</h3>
+                        </div>
+                        <div class="panel-body">
+                            <ul class="onlinepeers"></ul>
+                        </div>
+                    </div>
+                </div>
+    		</div>
+    	</div>
+    </section>
+
+    <div class="container-fluid chat-container">
+		<div class="row">
+		</div>
+    </div>
+
+
+    <div class="portfolio-modal modal" id="videoCallPanel" tabindex="-1" role="dialog" data-keyboard="false" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal end-call hide" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="getUserNameModal" tabindex="-1" role="dialog" data-keyboard="false" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop='static'>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Enter your Nickname</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="user-name">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal" class="btn btn-primary username-done">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="callConfirmationModal" tabindex="-1" role="dialog" data-keyboard="false" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop='static'>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title peer-name"></h5>
+                </div>
+                <div class="modal-body">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+
+    <script src="{% static 'js/peer.js' %}"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+    <script src="{% static 'js/peer-client.js' %}"></script>
+</body>
+
+</html>
