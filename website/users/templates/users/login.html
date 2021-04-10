@@ -1,0 +1,211 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+            crossorigin="anonymous"
+        />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+            integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+            crossorigin="anonymous"
+        />
+
+        <link href="{% static 'css/styleguide.css' %}" rel="stylesheet" />
+        <link href="{% static 'css/utils.css' %}" rel="stylesheet" />
+
+        <style>
+            body,
+            html {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                background: #fff;
+            }
+            .user_card {
+                width: 350px;
+                margin-top: auto;
+                margin-bottom: auto;
+                background: rgba(77, 170, 255, 1);
+                position: relative;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                padding: 10px;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                border-radius: 5px;
+            }
+
+            .form_container {
+                margin-top: 20px;
+            }
+
+            #form-title {
+                color: #fff;
+            }
+
+            .login_btn {
+                width: 100%;
+                background: #33ccff;
+                color: white;
+            }
+            .login_btn:focus {
+                box-shadow: none;
+                outline: 0px;
+            }
+            .login_container {
+                padding: 0 2rem;
+            }
+            .input-group-text {
+                background: #f7ba5b;
+                color: white;
+                border: 0;
+                border-radius: 0.25rem 0 0 0.25rem;
+            }
+            .input_user,
+            .input_pass:focus {
+                box-shadow: none;
+                outline: 0px;
+            }
+
+            #messages {
+                background-color: grey;
+                color: #fff;
+                padding: 10px;
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <nav id="navbar">
+            <div class="container">
+                <div class="logo">
+                    <img
+                        src="{% static 'images/logo.jpeg' %}"
+                        alt=""
+                        style="
+                            height: 110px;
+                            width: 110px;
+                            margin-bottom: -100px;
+                        "
+                    />
+                </div>
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li>
+                        <a
+                            href="{% url 'guide' %}"
+                            style="text-decoration: none"
+                            >Guide</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="{% url 'chatting' %}"
+                            style="text-decoration: none"
+                            >Chat</a
+                        >
+                    </li>
+                    <li>
+                        <a href="{% url 'Faq' %}" style="text-decoration: none"
+                            >Faq</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="{% url 'register' %}"
+                            style="text-decoration: none"
+                            >Register</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="{% url 'login' %}"
+                            style="text-decoration: none"
+                            >Sign In/Sign Up</a
+                        >
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container h-100">
+            <div class="d-flex justify-content-center h-100">
+                <div class="user_card">
+                    <div class="d-flex justify-content-center">
+                        <h3 id="form-title">SIGN IN</h3>
+                    </div>
+                    <div class="d-flex justify-content-center form_container">
+                        <form method="POST" action="">
+                            {% csrf_token %}
+                            <div class="input-group mb-3">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"
+                                        ><i class="fas fa-user"></i
+                                    ></span>
+                                </div>
+
+                                <input
+                                    type="text"
+                                    name="username"
+                                    placeholder="Username..."
+                                    class="form-control"
+                                />
+                            </div>
+
+                            <div class="input-group mb-2">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"
+                                        ><i class="fas fa-key"></i
+                                    ></span>
+                                </div>
+
+                                <input
+                                    type="password"
+                                    name="password"
+                                    placeholder="Password..."
+                                    class="form-control"
+                                />
+                            </div>
+
+                            <div
+                                class="d-flex justify-content-center mt-3 login_container"
+                            >
+                                <a href="{% url 'home' %}" class="ml-2">
+                                    <input
+                                        class="btn login_btn"
+                                        type="submit"
+                                        value="Login"
+                                    />
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+
+                    {% if messages %} {% for message in messages%}
+                    <p id="messages">{{message}}</p>
+                    {% endfor %} {% endif %}
+
+                    <div class="mt-4">
+                        <div class="d-flex justify-content-center links">
+                            Don't have an account?
+                            <a href="{% url 'register' %}" class="ml-2"
+                                >Sign Up</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
