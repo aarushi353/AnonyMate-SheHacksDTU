@@ -1,5 +1,10 @@
 # AnonyMate-SheHacksDTU
 
+AnonyMate was built by Hack Linguists as a part of SheHacks DTU 2021 conducted by CLIMB DTU.
+
+
+
+
 How to use the code:
 
 1. Fork and clone the repository onto your device.
