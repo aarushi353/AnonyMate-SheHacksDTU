@@ -41,5 +41,8 @@ Google Calendar (API)
 
 
 
-
+Made by:
+Aarushi Abrol
+Shreya Chopra
+Shristi Gupta
 
